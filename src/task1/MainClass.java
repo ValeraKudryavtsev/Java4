@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainClass implements Predicate {
     public static void main(String[] args) {
-        Integer num;
+        int num;
         Scanner sc = new Scanner(System.in);
         System.out.println("Input number: ");
         num = sc.nextInt();
@@ -12,18 +12,13 @@ public class MainClass implements Predicate {
         System.out.println(predicate.test(num));
     }
 
-    public static boolean testFunc(Integer num) {
-        while (num != 1 && num % 2 == 0) {
-            num /= 2;
-        }
-        if (num==1)
-            return true;
-        else
-            return false;
+    public static boolean testFunc(int num) {
+        while (num != 1 && num % 2 == 0) num /= 2;
+        return num == 1;
     }
 
     @Override
-    public boolean test(Integer value) {
+    public boolean test(int value) {
         return false;
     }
 }
