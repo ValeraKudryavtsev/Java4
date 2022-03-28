@@ -8,8 +8,8 @@ public class AbstractFactory {
         Hero sm = heroFactory.createNewHero("spider-man");
         Hero h = heroFactory.createNewHero("hulk");
 
-        Villain th = villainFactory.createNewVilain("thanos");
-        Villain z = villainFactory.createNewVilain("zemo");
+        Villain th = villainFactory.createNewVillain("thanos");
+        Villain z = villainFactory.createNewVillain("zemo");
 
         System.out.println(sm.getName());
         System.out.println(h.getName());
@@ -57,7 +57,7 @@ class Thanos implements Villain {
 
 interface CharacterFactory {
     Hero createNewHero(String type);
-    Villain createNewVilain(String type);
+    Villain createNewVillain(String type);
 }
 
 class HeroFactory implements CharacterFactory {
@@ -74,7 +74,7 @@ class HeroFactory implements CharacterFactory {
     }
 
     @Override
-    public Villain createNewVilain(String type) {
+    public Villain createNewVillain(String type) {
         return null;
     }
 }
@@ -86,7 +86,7 @@ class VillainFactory implements CharacterFactory {
     }
 
     @Override
-    public Villain createNewVilain(String type) {
+    public Villain createNewVillain(String type) {
         switch (type) {
             case "thanos":
                 return new Thanos();
